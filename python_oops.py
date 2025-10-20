@@ -1,26 +1,11 @@
-class computer:
+class car:
+    wheel = 4 # class variable or static variable
     def __init__(self):
-        self.name="logesh"
-        self.age=18
-    def update(self):
-        self.age=30  
-    def compare(self,other):
-        if self.age==other.age:
-            return True
-        else:
-            return False      
-c1=computer() #constuctor called internully when object created
-c2=computer()
-if c1.compare(c2):
-    print("They are same")
-c1.name="kumar"
-c1.age=20
-c1.update()
-if c1.compare(c2):
-    print("They are same")
-else:
-    print("They are different")    
-print(c1.name)
-print(c1.age) 
-print(c2.name)
-print(c2.age)
+        self.mil = 10 # instance variable or name space
+        self.com = "BMW"
+c1 = car()
+c2 = car()
+c1.mil = 8
+car.wheel = 5 #changing in all objects
+print(c1.com, c1.mil, c1.wheel)
+print(c2.com, c2.mil, c2.wheel)
