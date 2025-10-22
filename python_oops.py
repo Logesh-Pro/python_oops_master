@@ -1,19 +1,19 @@
-# meaning of instance is it belong to a particular object
-#there are two types of instance methods accessor and mutator methods
-class student:
-    school = "Telusko"
-    def __init__(self,m1,m2,m3):
-        self.m2=m2
-        self.m3=m3
-    def avg(self):
-        return (self.m1+self.m2+self.m3)/3  
-    @classmethod #if we are working with a class variable or method(cls) we want to use @classmethod
-    def getschool(cls): # if we are working with a class variable we want to use cls
-        return cls.school
-    @staticmethod # if we are not working with a class variable or method or not using anything we want to use @staticmethod
-    def info():
-        print("this is student class.. in abc module") #static method we dont want to use self or cls
-s1 = student(34,56,78)
-s2 = student(45,67,89)
-print(student.getschool())
-student.info()
+class student: #outer class
+    def __init__(self,name,rollno):
+        self.name = name
+        self.roll_no = rollno
+        self.lap = self.laptop()
+    def show(self):
+        print(self.name,self.roll_no)
+    class laptop: #inner class
+        def __init__(self):
+            self.brand='hp'
+            self.cpu='i5'
+            self.ram='8'
+s1=student("Alice",101)
+s2=student("Bob",102)
+s1.show()       
+lap1=s1.lap #calling with outer class object
+lap2=s2.lap
+print(id(lap1))
+print(id(lap2))
