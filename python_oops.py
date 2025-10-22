@@ -15,6 +15,8 @@ class b:
 class c(a,b):
     def __init__(self):
         super().__init__() #method resolution order(MRO)(left to right)(so c(a,b) a comes first so a)
-        print("in c init")           
+        print("in c init")     
+    def feat(self):
+        super.feature2()#calling feature2 of class a using super() (to reperesent a super class method we can use super keyword)
 a1 = c() 
 a1.feature1()#(MRO will work on methods also)
