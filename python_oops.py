@@ -7,6 +7,7 @@ class a:
         print("feature 2 working")
 class b(a):
     def __init__(self):
+        super().__init__() # if we want to call super class init we have to use super()
         print("in b init")
     def feature3(self):
         print("feature 3 working")
