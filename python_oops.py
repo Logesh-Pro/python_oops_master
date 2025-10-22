@@ -1,23 +1,22 @@
-#you can create object of inner class inside the outer class or you can can create object of inner class outside the outer class provided you use outer class name to call it
-class student: #outer class
-    def __init__(self,name,rollno):
-        self.name = name
-        self.roll_no = rollno
-        self.lap = self.laptop()
-    def show(self):
-        print(self.name,self.roll_no)
-        self.lap.show()
-    class laptop: #inner class
-        def __init__(self):
-            self.brand='hp'
-            self.cpu='i5'
-            self.ram='8'
-        def show(self):
-            print(self.brand,self.cpu,self.ram)    
-s1=student("Alice",101)
-s2=student("Bob",102)
-s1.show()       
-lap1=student.laptop()
-lap2=student.laptop()
-print(id(lap1))
-print(id(lap2))
+class a:
+    def feature1(self):
+        print("feature 1 working")
+    def feature2(self):
+        print("feature 2 working")
+#below is  a single level inheritance example
+class b(a):#inheritance (using class a methods since b is child class of a)
+    def feature3(self):
+        print("feature 3 working")
+    def feature4(self):
+        print("feature 4 working")  
+class c(b):#multilevel inheritance (using class b and a methods since c is child class of b)
+    def feature5(self):
+        print("feature 5 working")         
+a1=a()
+a1.feature1()
+a1.feature2()     
+b1=b()
+b1.feature2()
+c1=c()
+c1.feature1()
+c1.feature3()
