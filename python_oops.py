@@ -5,13 +5,15 @@ class a:
         print("feature 1 working")
     def feature2(self):
         print("feature 2 working")
-class b(a):
+class b:
     def __init__(self):
-        super().__init__() # if we want to call super class init we have to use super()
         print("in b init")
     def feature3(self):
         print("feature 3 working")
     def feature4(self):
-        print("feature 4 working")       
-a1 = b() 
-#sub class can't call super class init if it have init on its class
+        print("feature 4 working")  
+class c(a,b):
+    def __init__(self):
+        super().__init__() #method resolution order(MRO)(left to right)(so c(a,b) a comes first so a)
+        print("in c init")           
+a1 = c() 
