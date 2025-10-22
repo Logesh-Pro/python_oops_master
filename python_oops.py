@@ -16,7 +16,7 @@ class Student:
         else:
             return False
     def __str__(self):  
-        return f"{self.m1} {self.m2}"  
+        return self.m1,self.m2  
 s1=Student(58,69)
 s2=Student(78,89)        
 s3=s1+s2 #->student.__add__(s1,s2)
@@ -25,5 +25,4 @@ if(s1>s2):
 else:   
     print("s2 wins")
 print(s3.m1)
-print(s1)
-#redefine the rule is known as method overloading (eg:we can do addion by '-' symbol)
+print(s1.__str__())
