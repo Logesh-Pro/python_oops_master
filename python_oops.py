@@ -11,4 +11,4 @@ class b(a):
     def feature4(self):
         print("feature 4 working")       
 a1 = b() 
-#sub class can call super class init if it not have init on its class
+#sub class can't call super class init if it have init on its class
